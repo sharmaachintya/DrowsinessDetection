@@ -1,6 +1,6 @@
 # DrowsinessDetection
 
-NOTE: SHAPE PREDICTOR 68 LANDMARKS DAT FILE IS MORE THAN 25 Mb SO CAN'T UPLOAD BUT HERE IS THE LINK TO DOWNLOAD IT : https://github.com/davisking/dlib-models/blob/master/shape_predictor_68_face_landmarks.dat.bz2
+NOTE: SHAPE PREDICTOR 68 LANDMARKS DAT FILE IS MORE THAN 25 Mb SO CAN'T UPLOAD IT BUT HERE IS THE LINK TO DOWNLOAD IT : https://github.com/davisking/dlib-models/blob/master/shape_predictor_68_face_landmarks.dat.bz2
 
 
-In the main code I've used 68 landmark face shape predictor for getting the exact coordinates of my eyes so that, I can use the vertical coordinates of my both eyes to calculated
+In the MAIN code I've used 68 landmark face shape predictor for getting the exact coordinates of my eyes so that, I can use the vertical coordinates of my both eyes to calculate the eye aspect ratio and also I've used dlib's frontal face detector for detecting the face first. I've used facial_landmarsk_idxs function for getting the vertical coordinates of both eyes(This function is present inside imutils libarary -> face_utils). Many of you might be having the doubt that how'll it identify whether the person is blinking or sleeping, I took care of it by defining a earThresh named variable which is defined by a number and when the distance between the both eyes will be less then that specific number it will increase the count variable by 1, also a variable is defined earframes with a number and if there is continuity in closure of both eyes the count will keep increasing and after the time the value of count will be higher than earframes, then it will detected as drowsiness.
